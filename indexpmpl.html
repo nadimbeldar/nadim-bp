@@ -231,7 +231,8 @@
         const options = { year: "2-digit", month: "short", day: "2-digit" };
         const formattedDate = today
           .toLocaleDateString("en-GB", options)
-          .replace(/ /g, " ");
+          .replace(/ /g, " ")
+          .replace(/(\d{2}) (\w{3}) (\d{2})/, '$1 $2, $3'); // Update date format
         document.getElementById("booking-date").textContent = formattedDate;
         document.getElementById("validity-date").textContent = formattedDate;
       });
